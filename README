@@ -1,7 +1,11 @@
 Base for django projects
 
-Current Django Version - 1.3
+Version:
+
+Django - 1.3
+Bootstrap - 1.2
 
 Requires:
    * Django-extensions - https://github.com/django-extensions/django-extensions
    * Werkzeug - http://werkzeug.pocoo.org/
+   * Django-registration - https://bitbucket.org/ubernostrum/django-registration/

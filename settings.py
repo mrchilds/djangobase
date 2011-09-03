@@ -118,6 +118,9 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django_extensions',
     'werkzeug',
+    'registration',
+    'bootstrap',
+
 )
 
 # A sample logging configuration. The only tangible logging
