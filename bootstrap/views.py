@@ -4,13 +4,11 @@ from django.shortcuts import render_to_response
 
 from bootstrap.forms import ExampleForm
 
-def bootstrap(request):
+def home(request):
     context = {}
     context["form"] = ExampleForm()
     context["user"] = request.user
     context.update(csrf(request))
-    
-    print context
     return render_to_response("bootstrap/example.html", context)
 
 @login_required
