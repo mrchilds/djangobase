@@ -1,0 +1,24 @@
+{% extends "bootstrap/base.html" %}
+{% load i18n %}
+
+{% block content %}
+      <!-- Main hero unit for a primary marketing message or call to action -->
+      <div class="hero-unit">
+        <h1>Django and Bootstrap</h1>
+      </div>
+
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="span16">
+					<h2>Example Form</h2>
+					{% for item in form %}
+					  <div class="clearfix">
+							<label>{{ item.label }}</label>
+							<div class="input">
+								{{ item }}
+							</div>
+						</div>
+					{% endfor %}
+        </div>
+      </div>
+{% endblock %}

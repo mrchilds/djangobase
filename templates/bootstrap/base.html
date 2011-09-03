@@ -1,0 +1,76 @@
+{% load i18n %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap, from Twitter</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+    <!-- Le styles -->
+    <link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap-1.2.0.min.css">
+		<link rel="stylesheet" href="/static/bootstrap/style.css">
+
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="/static/bootstrap/jquery-1.6.2.min.js"><\/script>')</script>
+    <script type="text/javascript" src="/static/bootstrap/example.js"></script>
+  </head>
+
+  <body>
+
+    <div class="topbar">
+      <div class="fill">
+        <div class="container">
+          <h3><a href="{% url bootstrap.views.bootstrap %}">Example</a></h3>
+					<ul class="nav secondary-nav">
+						{% if user.is_authenticated %}
+						<a href="{% url auth_logout %}" >Logout</a>
+						{% else %}
+						<li class="menu">
+		          <a href="#" class="menu">Login</a>
+		          <ul class="menu-dropdown login_wider">
+								<form method="post" action="{% url auth_login %}">{% csrf_token %}
+									<li>Username:<input type="text" maxlength="30" name="username" id="id_username" class="login_dropdown"></li>
+									<li>Password:<input type="password" id="id_password" name="password" class="login_dropdown"></li>
+									<li><input type="submit" value="{% trans 'Log in' %}" /></li>
+									<input type="hidden" name="next" value="{% url bootstrap.views.inside %}" />
+								  <li class="divider"></li>
+									<li>{% trans "Forgot password" %}?</li>
+									<li><a href="{% url auth_password_reset %}">{% trans "Reset it" %}</a></li>		
+								</form>
+		          </ul>
+		        </li>
+						{% endif %}
+		       </ul>
+		     </li>
+			  </ul>
+		</div>
+      </div>
+    </div>
+
+    <div class="container">
+		{% block content %}{% endblock %}
+
+
+      <footer>
+        <p>&copy; Company 2011</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+  </body>
+</html>
