@@ -9,3 +9,4 @@ Requires:
    * Django-extensions - https://github.com/django-extensions/django-extensions
    * Werkzeug - http://werkzeug.pocoo.org/
    * Django-registration - https://bitbucket.org/ubernostrum/django-registration/
+   * Django-evolution - http://code.google.com/p/django-evolution/

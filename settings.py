@@ -119,6 +119,7 @@ INSTALLED_APPS = (
     'django_extensions',
     'werkzeug',
     'registration',
+    'django_evolution',
     'bootstrap',
 
 )
