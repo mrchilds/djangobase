@@ -1,7 +1,7 @@
 from django.conf.urls.defaults import patterns, include, url
 from django.contrib import admin
 
-from bootstrap.views import home, inside
+from bootstrap.views import home, inside, ajax_example
 
 admin.autodiscover()
 
@@ -14,4 +14,5 @@ urlpatterns = patterns('',
     
     (r'^$', home),
     (r'^inside/$', inside),
+    (r'^ajax_example', ajax_example)
 )

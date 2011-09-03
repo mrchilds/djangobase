@@ -8,17 +8,7 @@
       </div>
 
       <!-- Example row of columns -->
-      <div class="row">
-        <div class="span16">
-					<h2>Example Form</h2>
-					{% for item in form %}
-					  <div class="clearfix">
-							<label>{{ item.label }}</label>
-							<div class="input">
-								{{ item }}
-							</div>
-						</div>
-					{% endfor %}
-        </div>
-      </div>
+			<div id="form">
+				{% include "bootstrap/example_form.html" %}
+			</div>
 {% endblock %}
