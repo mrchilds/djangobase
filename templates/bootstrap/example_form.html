@@ -6,12 +6,7 @@
 			
     {% if form.non_field_errors %}{{ form.non_field_errors }}{% endif %}
 		{% for item in form %}
-		  <div class="clearfix {% if item.errors %}error{% endif %}">
-				<label>{{ item.label }}</label>
-				<div class="input">
-					{{ item }}{% if item.errors %}{% for error in item.errors %}&nbsp;{{ error }}{% endfor %}{% endif %}
-				</div>
-			</div>
+			{% include 'bootstrap/form_field.html' %}
 		{% endfor %}
   </div>
 </div>
