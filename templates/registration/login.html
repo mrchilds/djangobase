@@ -7,11 +7,15 @@
 </div>
 <div class="row">
   <div class="span16">
+		{% if form.non_field_errors %}
+			<div class="alert-message error">
+      	<p><strong>Error:</strong>&nbsp; {% for err in form.non_field_errors %}{{ err }}{% endfor %}</p>
+			</div>
+		{% endif %}
 		<form method="post" action=".">{% csrf_token %}
-				{% if form.non_field_errors %}{{ form.non_field_errors }}{% endif %}
-				{% for item in form %}
-					{% include 'bootstrap/form_field.html' %}
-				{% endfor %}
+			{% for item in form %}
+				{% include 'bootstrap/form_field.html' %}
+			{% endfor %}
 	</div>
 </div>
 <div class="row">
@@ -20,7 +24,7 @@
 		  <input type="submit" class="btn primary" value="{% trans 'Log in' %}" />
 		  <input type="hidden" name="next" value="{% url bootstrap.views.inside %}" />
 			</form>
-    	<p>{% trans "Forgot password" %}? <a href="{% url auth_password_reset %}">{% trans "Reset it" %}</a>!</p>
+    	<p>{% trans "Forgot password" %}? <a href="{% url auth_password_reset %}">{% trans "Reset it" %}</a></p>
 		</div>
 	</div>
 </div>
