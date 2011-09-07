@@ -11,3 +11,7 @@ Requires:
    * Werkzeug - http://werkzeug.pocoo.org/
    * Django-registration - https://bitbucket.org/ubernostrum/django-registration/
    * Django-evolution - http://code.google.com/p/django-evolution/
+
+Optional:
+
+   * Fabric
