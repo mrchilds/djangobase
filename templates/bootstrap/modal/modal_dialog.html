@@ -1,0 +1,47 @@
+{% extends "bootstrap/base.html" %}
+{% load i18n %}
+
+{% block javascript %}
+    <script type="text/javascript" src="/static/bootstrap/js/bootstrap-modal.js"></script>
+{% endblock %}
+
+{% block content %}
+<div class="hero-unit">
+  <h1>Modal Dialog</h1>
+</div>
+<div class="row">
+	<div class="span8">
+		<div id="modal-from-dom" class="modal hide fade">
+      <div class="modal-header">
+        <a href="#" class="close">&times;</a>
+        <h3>Modal Heading</h3>
+      </div>
+      <div class="modal-body">
+        <p>Static Text</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="btn primary">Primary</a>
+        <a href="#" class="btn secondary">Secondary</a>
+      </div>
+		</div>
+		<button class="btn danger" data-keyboard="true" data-backdrop="true" data-controls-modal="modal-from-dom">Launch Static Text Modal</button>
+	</div>
+	<div class="span8">
+		<div id="ajax-text-modal" class="modal hide fade">
+      <div class="modal-header">
+        <a href="#" class="close">&times;</a>
+        <h3>Modal Heading</h3>
+      </div>
+      <div class="modal-body" id="modal-text">
+				{% include 'bootstrap/modal/modal_dialog_text.html' %}
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="btn primary">Primary</a>
+        <a href="#" class="btn secondary">Secondary</a>
+      </div>
+		</div>
+		<button class="btn success" id="ajax-modal" for="1">Launch Ajax Modal</button>
+	</div>
+</div>
+
+{% endblock %}

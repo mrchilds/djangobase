@@ -28,8 +28,19 @@ $(document).ready(function() {
              }
          } 
     });
+    $('#ajax-text-modal').modal({backdrop: true, 
+                                 keyboard: true});
+    $("#ajax-modal").click( function () { 
+        var id = { id : $(this).attr("for") }
+        $.post("/text_modal_dialog/", id,
+            function(response){
+                $("#modal-text").html(response.html);
+                $("#ajax-text-modal").modal("show");
+            }, "json");
+    });
 });
 
+// Ajax Form
 function ajax() {
     var form = $("#example_form").serialize();
     $.post("/ajax_example/", form,
@@ -42,3 +53,5 @@ function ajax() {
             }
          }, "json");
 }
+
+// Modal Dialog

@@ -36,6 +36,30 @@ def ajax_example(request):
                         content_type=\
                             "application/javascript; charset=utf-8")    
 
+
+def modal_dialog(request):
+    context = {}
+    context["user"] = request.user
+    context.update(csrf(request))
+    return render_to_response("bootstrap/modal/modal_dialog.html", context)
+
+
+def text_modal_dialog(request):
+    if request.POST.get('id', False):
+        # String provided for ease of demonstration
+        # Replace with model lookup, e.g. 
+        # wording = User.objects.get(id=request.POST.get('id', False))
+        wording = "ABC"
+    else:
+        wording = False
+    template = "bootstrap/modal/modal_dialog_text.html"
+    html = render_to_string(template, {"wording": wording})
+    response = simplejson.dumps({"html": html})
+    return HttpResponse(response,
+                        content_type=\
+                            "application/javascript; charset=utf-8")
+
+
 @login_required
 def inside(request):
     context = {}
