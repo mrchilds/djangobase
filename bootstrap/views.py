@@ -12,6 +12,7 @@ def home(request):
     context = {}
     context.update(csrf(request))
     context["user"] = request.user
+    context["hero_title"] = "Welcome to the Bootstrap django base"
     return render_to_response("bootstrap/home.html", context)
 
 
@@ -19,6 +20,7 @@ def ajax_form(request):
     context = {}
     context["form"] = ExampleForm()
     context["user"] = request.user
+    context["hero_title"] = "Ajax Form"
     context.update(csrf(request))
     return render_to_response("bootstrap/example.html", context)
 
@@ -49,6 +51,7 @@ def ajax_example(request):
 def modal_dialog(request):
     context = {}
     context["user"] = request.user
+    context["hero_title"] = "Modal Dialog"
     context.update(csrf(request))
     return render_to_response("bootstrap/modal/modal_dialog.html", context)
 
