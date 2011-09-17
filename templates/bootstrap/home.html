@@ -1,0 +1,32 @@
+{% extends "bootstrap/base.html" %}
+{% load i18n %}
+
+{% block content %}
+<div class="hero-unit">
+  <h1>Welcome To The Bootstrap Django base</h1>
+</div>
+<div class="row">
+	<div class="span12">
+		<h3>Contents</h3>
+		<ul>
+			<li><a href="{% url auth_login %}">Django Login</a></li>
+			<li><a href="{% url bootstrap.views.ajax_form %}">Ajax Form</a></li>
+			<li><a href="{% url bootstrap.views.modal_dialog %}">Modal Dialog</a></li>
+			<ul>
+				<li>Static Text Modal Dialog</li>
+				<li>Dynamically created modal text via ajax</li>
+			</ul>
+		</ul>
+	</div>
+	<div class="span4">
+		<div class="well">
+			<h3>References</h3>
+			<ul>
+				<li><a href="http://twitter.github.com/bootstrap/">Bootstrap</a></li>
+				<li><a href="https://www.djangoproject.com/">Django</a></li>
+				<li><a href="http://jquery.com/">jQuery</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+{% endblock %}

@@ -53,5 +53,3 @@ function ajax() {
             }
          }, "json");
 }
-
-// Modal Dialog

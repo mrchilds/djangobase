@@ -16,6 +16,7 @@ urlpatterns = patterns('',
     (r'^inside/$', inside),
     
     #Ajax Form
+    (r'^ajax_form', ajax_form),
     (r'^ajax_example', ajax_example),
     
     #modal dialog

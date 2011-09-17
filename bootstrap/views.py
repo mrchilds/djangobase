@@ -7,12 +7,21 @@ from django.utils import simplejson
 
 from bootstrap.forms import ExampleForm
 
+
 def home(request):
+    context = {}
+    context.update(csrf(request))
+    context["user"] = request.user
+    return render_to_response("bootstrap/home.html", context)
+
+
+def ajax_form(request):
     context = {}
     context["form"] = ExampleForm()
     context["user"] = request.user
     context.update(csrf(request))
     return render_to_response("bootstrap/example.html", context)
+
 
 def ajax_example(request):
     context = {}
