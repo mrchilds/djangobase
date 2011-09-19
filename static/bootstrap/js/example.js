@@ -28,7 +28,7 @@ $(document).ready(function() {
              }
          } 
     });
-    $('#ajax-text-modal').modal({backdrop: true, 
+    $("#ajax-text-modal").modal({backdrop: true, 
                                  keyboard: true});
     $("#ajax-modal").click( function () { 
         var id = { id : $(this).attr("for") }

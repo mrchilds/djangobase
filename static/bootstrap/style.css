@@ -7,3 +7,6 @@
 .topbar ul .menu-dropdown li a, .topbar ul .dropdown-menu li a { padding:0px;}
 
 .align_button { padding-left:150px;}
+
+/* Ajax loader for input */
+.ui-autocomplete-loading { background: white url('/static/images/ui-anim_basic_16x16.gif') right center no-repeat; }

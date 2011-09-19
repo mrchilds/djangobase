@@ -12,3 +12,8 @@ class ExampleForm(ModelForm):
             widget=forms.Textarea(attrs={'class':'xxlarge'}))    
     class Meta:
         model = ExampleFields
+        
+class AjaxAutoComplete(forms.Form):
+    name = forms.CharField(help_text="Enter a Star Wars character name, e.g Darth",
+        label="Star Wars Character",
+        widget=forms.TextInput(attrs={'class':'xlarge','help_text' : 'help me'}))
