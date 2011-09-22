@@ -28,6 +28,12 @@ urlpatterns = patterns('',
     (r'^ajax_autocomplete_lookup/$', ajax_autocomplete_lookup),
     (r'^ajax_autocomplete_get_selected_item/$', ajax_autocomplete_get_selected_item),
     
+    #Popovers
+    (r'^popover/$', popover),
+    
+    #Geolocation
+    (r'^geolocation/$', geolocation),    
+    
     #Humans and Robots
     ('^humans.txt$', direct_to_template, {'template':'humans.txt', 'mimetype':'text/plain'}),
     ('^robots.txt$', direct_to_template, {'template':'robots.txt', 'mimetype':'text/plain'}),
