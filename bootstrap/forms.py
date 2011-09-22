@@ -16,4 +16,10 @@ class ExampleForm(ModelForm):
 class AjaxAutoComplete(forms.Form):
     name = forms.CharField(help_text="Enter a Star Wars character name, e.g Darth",
         label="Star Wars Character",
-        widget=forms.TextInput(attrs={'class':'xlarge','help_text' : 'help me'}))
+        widget=forms.TextInput(attrs={'class':'xlarge'}))
+        
+class PopoverForm(forms.Form):
+    popover_input = forms.CharField(label="Form Input Popover",
+        widget=forms.TextInput(attrs={'class':'xlarge', 
+            'data-content' : 'On focus, this appears - defined in forms.py',
+            'data-original-title' : 'My title'}))

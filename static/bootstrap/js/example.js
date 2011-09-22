@@ -38,6 +38,7 @@ $(document).ready(function() {
                 $("#ajax-text-modal").modal("show");
             }, "json");
     });
+    $("#id_popover_input").popover({trigger: "focus"}); 
 });
 
 // Ajax Form

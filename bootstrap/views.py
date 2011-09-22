@@ -5,7 +5,7 @@ from django.shortcuts import render_to_response
 from django.template.loader import render_to_string
 from django.utils import simplejson
 
-from bootstrap.forms import ExampleForm, AjaxAutoComplete
+from bootstrap.forms import ExampleForm, AjaxAutoComplete, PopoverForm
 from bootstrap.models import StarWarsCharacter
 
 def home(request):
@@ -90,7 +90,6 @@ def ajax_autocomplete_lookup(request):
             character_dict = {}
             character_dict["id"] = character.id
             character_dict["label"] = character.name
-            print character_dict
             results.append(character_dict)   
     response = simplejson.dumps(results)
     return HttpResponse(response,
@@ -113,7 +112,25 @@ def ajax_autocomplete_get_selected_item(request):
     return HttpResponse(response,
                         content_type=\
                             "application/javascript; charset=utf-8")
+                            
+                            
+def popover(request):
+    context = {}
+    context["user"] = request.user
+    context["hero_title"] = "Popovers"
+    context["form"] = PopoverForm()
+    context.update(csrf(request))
+    return render_to_response("bootstrap/popover/popover.html", context)
 
+
+def geolocation(request):
+    context = {}
+    context["user"] = request.user
+    context["hero_title"] = "Geolocation"
+    context.update(csrf(request))
+    return render_to_response("bootstrap/geolocation/geolocation.html", context)
+    
+    
 @login_required
 def inside(request):
     context = {}

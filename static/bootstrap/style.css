@@ -10,3 +10,14 @@
 
 /* Ajax loader for input */
 .ui-autocomplete-loading { background: white url('/static/images/ui-anim_basic_16x16.gif') right center no-repeat; }
+
+/* Geolocation */
+#map { float: left;
+       height: 500px;
+       margin: 12px auto;
+       width: 60%;}
+   
+#map-directions {   
+       float: right;
+       padding-left: 2%;
+       width: 38%;}

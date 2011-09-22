@@ -29,7 +29,9 @@
 		<script>window.jQuery || document.write('<script src="/static/bootstrap/js/jquery-1.6.2.min.js"><\/script>')</script>
 		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
     <script type="text/javascript" src="/static/bootstrap/js/example.js"></script>
+    <script type="text/javascript" src="/static/bootstrap/js/bootstrap-twipsy.js"></script>
     <script type="text/javascript" src="/static/bootstrap/js/bootstrap-modal.js"></script>
+    <script type="text/javascript" src="/static/bootstrap/js/bootstrap-popover.js"></script>
 		{% block javascript %}{% endblock %}
   </head>
 
@@ -43,6 +45,8 @@
             <li><a href="{% url bootstrap.views.ajax_form %}">Ajax Form</a></li> 	
             <li><a href="{% url bootstrap.views.modal_dialog %}">Modal Dialog</a></li>
 						<li><a href="{% url bootstrap.views.ajax_autocomplete %}">Ajax Autocomplete</a></li>
+						<li><a href="{% url bootstrap.views.popover %}">Popovers</a></li>
+						<li><a href="{% url bootstrap.views.geolocation %}">Geolocation</a></li>
           </ul>
 					<ul class="nav secondary-nav">
 						{% if user.is_authenticated %}
